@@ -7,10 +7,16 @@
   "extends": [
     "eslint:recommended",
     "airbnb-base",
+    "plugin:@typescript-eslint/recommended",
     "plugin:vue/vue3-recommended",
-    "eslint:recommended"
+    "@vue/eslint-config-typescript/recommended"
   ],
-  "plugins": ["vue"],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["vue", "@typescript-eslint"],
   "rules": {
     "max-len": ["error", {
       "code": 100,
@@ -24,6 +30,10 @@
     "object-shorthand": ["error", "always", { "avoidQuotes": false }],
     "no-nested-ternary": "off",
     "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true }],
+    "@typescript-eslint/no-non-null-assertion": "off",
     "vue/component-tags-order": ["error", { "order": ["template", "script", "style"] }],
     "vue/html-closing-bracket-newline": ["error", {
       "singleline": "never",
@@ -35,13 +45,18 @@
     }],
     "vue/singleline-html-element-content-newline": "off",
     "import/no-absolute-path": "off",
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      { "ts": "never" }
+    ]
   },
   "settings": {
     "import/resolver": {
       "eslint-import-resolver-custom-alias": {
         "alias": { "/@": "./src" },
-        "extensions": [".js", ".json", ".vue", ".yaml"]
+        "extensions": [".ts", ".json", ".vue", ".yaml"]
       }
     }
   }
