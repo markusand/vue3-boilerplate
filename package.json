@@ -11,7 +11,7 @@
     "vue": "^3.0.5"
   },
   "devDependencies": {
-    "@rollup/plugin-yaml": "^4.1.2",
+    "@modyfi/vite-plugin-yaml": "^1.1.0",
     "@types/node": "^20.12.7",
     "@typescript-eslint/eslint-plugin": "^7.6.0",
     "@typescript-eslint/parser": "^7.6.0",
