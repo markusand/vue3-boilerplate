@@ -5,6 +5,7 @@
     "browser": true
   },
   "extends": [
+    "eslint:recommended",
     "airbnb-base",
     "plugin:vue/vue3-recommended",
     "eslint:recommended"
@@ -38,8 +39,8 @@
   },
   "settings": {
     "import/resolver": {
-      "alias": {
-        "map": [["/@", "./src"]],
+      "eslint-import-resolver-custom-alias": {
+        "alias": { "/@": "./src" },
         "extensions": [".js", ".json", ".vue", ".yaml"]
       }
     }
